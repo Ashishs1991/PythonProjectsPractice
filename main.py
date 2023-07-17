@@ -1,17 +1,53 @@
-# This is a sample Python script.
+from turtle import Turtle, Screen
+from random import *
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-    print(f'Hi, {name}')
+turt = Turtle()
+turt.shape("turtle")
+turt.pencolor("green")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Ashish')
+def draw_dotted_line():
+    for i in range(1, 100):
+        turt.pendown()
+        turt.forward(10.0)
+        turt.penup()
+        turt.forward(10.0)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def draw_triangle():
+    turt.forward(100.0)
+    turt.left(120.0)
+    turt.forward(100.0)
+    turt.left(120.0)
+    turt.forward(100.0)
+
+
+# //Draws all the shapes
+def draw_shape(i):
+    angle = 360 / i
+    for i in range(1, i + 1):
+        turt.forward(100.0)
+        turt.left(angle)
+
+
+def draw_all_shapes():
+    for i in range(3, 13):
+        draw_shape(i)
+
+
+draw_all_shapes()
+
+
+def draw_circle():
+    turt.forward(100.0)
+    turt.right(90.0)
+    turt.forward(100.0)
+    turt.right(90.0)
+    turt.forward(100.0)
+    turt.right(90.0)
+    turt.forward(100.0)
+    turt.right(90.0)
+
+
+screen = Screen()
+screen.exitonclick()
