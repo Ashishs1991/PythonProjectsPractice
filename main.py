@@ -1,9 +1,20 @@
-from turtle import Turtle, Screen
-from random import *
+from turtle import *
+import random
 
 turt = Turtle()
 turt.shape("turtle")
-turt.pencolor("green")
+cmode = colormode(255)
+
+
+def ran_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+
+    return r, g, b
+
+
+
 
 
 def draw_dotted_line():
@@ -24,6 +35,7 @@ def draw_triangle():
 
 # //Draws all the shapes
 def draw_shape(i):
+    turt.color(ran_color())
     angle = 360 / i
     for i in range(1, i + 1):
         turt.forward(100.0)
